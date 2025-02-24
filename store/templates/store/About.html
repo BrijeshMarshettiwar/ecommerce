@@ -1,0 +1,66 @@
+{% extends "store/main.html" %} {% load static %} {% block content %}
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  .container {
+    max-width: 1000px;
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  h1,
+  h2 {
+    text-align: center;
+  }
+  p {
+    line-height: 1.6;
+    text-align: justify;
+  }
+  .team {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  .team-member {
+    text-align: center;
+  }
+  .team-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+</style>
+<div class="container">
+  <h1>About Us</h1>
+  <p>
+    Welcome to Our E-commerce Store! We are dedicated to providing you with the
+    best products at affordable prices. Our mission is to create a seamless
+    online shopping experience with quality and customer satisfaction at the
+    core.
+  </p>
+  <p>{% lorem 5 b random %}</p>
+
+  <h2>Our Team</h2>
+  <div class="team">
+    <div class="team-member">
+      <img src="{% static 'images/t3.png' %}" alt="Team Member" />
+      <p>John Doe - Founder</p>
+    </div>
+    <div class="team-member">
+      <img src="{% static 'images/t4.png' %}" alt="Team Member" />
+      <p>Jane Smith - CEO</p>
+    </div>
+    <div class="team-member">
+      <img src="{% static 'images/t5.png' %}" alt="Team Member" />
+      <p>Mark Brown - Lead Developer</p>
+    </div>
+  </div>
+</div>
+{% endblock content %}
