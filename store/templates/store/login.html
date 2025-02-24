@@ -1,0 +1,86 @@
+{% extends "store/main.html" %} {% load static %} {% block content %}
+<style>
+  .box {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    margin-bottom:20px;
+}
+
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+h3 {
+    text-align: center;
+    color: #333;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+a {
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+</style>
+<div class="container box"><form method="post">
+  <h3>Login Here</h3>
+  {% csrf_token %} 
+  <label for="username">Username</label>
+  <input type="text" placeholder="Enter Username" id="username" name="username">
+
+  <label for="password">Password</label>
+  <input type="password" placeholder="Password" id="password" name="password">
+
+  <button type="submit">Log In</button>
+  <!-- <input type="button" value=""> -->
+  <!-- <div class="social">
+    <div class="go"><i class="fab fa-google"></i>  Google</div>
+    <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+  </div> -->
+  <a href="{% url 'signup' %}" >Create a account</a>
+</form></div>
+</div>
+{% endblock content %}
