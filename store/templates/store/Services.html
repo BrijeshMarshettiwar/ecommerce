@@ -1,0 +1,61 @@
+{% extends "store/main.html" %} {% load static %} {% block content %}
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  .container {
+    max-width: 1000px;
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  h1 {
+    text-align: center;
+  }
+  .service {
+    background: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  }
+  .service h2 {
+    color: #333;
+  }
+  .service p {
+    line-height: 1.6;
+  }
+</style>
+<div class="container">
+  <h1>Our Services</h1>
+  <div class="service">
+    <h2>Fast & Secure Delivery</h2>
+    <p>
+      We provide quick and reliable delivery services to ensure your products
+      arrive safely and on time.
+    </p>
+    <p>{% lorem 1 b random %}</p>
+  </div>
+  <div class="service">
+    <h2>24/7 Customer Support</h2>
+    <p>
+      Our dedicated customer service team is available around the clock to
+      assist you with any inquiries.
+    </p>
+    <p>{% lorem 1 b random %}</p>
+  </div>
+  <div class="service">
+    <h2>Easy Returns & Refunds</h2>
+    <p>
+      Not satisfied with your purchase? We offer hassle-free returns and refunds
+      for your convenience.
+    </p>
+    <p>{% lorem 1 b random %}</p>
+  </div>
+</div>
+{% endblock content %}
