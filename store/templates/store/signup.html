@@ -1,0 +1,98 @@
+{% extends "store/main.html" %} {% load static %} {% block content %}
+<style>
+  .box {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    margin-bottom: 20px;
+  }
+
+  form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  h3 {
+    text-align: center;
+  }
+
+  label {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+
+  button:hover {
+    background: #218838;
+  }
+
+  a {
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
+<div class="container box">
+  <form action="" method="post">
+    {% csrf_token %}
+    <h3>Signup Here</h3>
+
+    <label for="username">Username</label>
+    <input type="text" placeholder="Username" name="username" id="username" />
+
+    <label for="email">Email</label>
+    <input type="email" placeholder="Email or Phone" name="email" id="email" />
+
+    <label for="password1">Password</label>
+    <input
+      type="password"
+      placeholder="Password"
+      id="password1"
+      name="password1"
+    />
+
+    <label for="confirm_password">Confrom Password</label>
+    <input
+      type="password"
+      placeholder="Confrom Password"
+      id="confirm_password"
+      name="confirm_password"
+    />
+    <button type="submit">Signup</button>
+
+    <a href="{% url 'login' %}">i have already account</a>
+  </form>
+</div>
+{% endblock content %}
