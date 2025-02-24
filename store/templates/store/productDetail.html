@@ -1,0 +1,45 @@
+{% extends "store/main.html" %} {% load static %} {% block content %}
+  <div class="container" style="margin-bottom: 30px">
+    <div class="row">
+      <div class="col">
+        <img
+          class="thumbnail"
+          src="{{ product.imageURL }}"
+          alt=""
+          style="width: 400px; height: 400px"
+        />
+      </div>
+      <div class="col">
+        <div class="">
+          <h3><strong>{{product.name}}</strong></h3>
+          <hr />
+          {% if user.is_authenticated %}
+        <button
+          data-product="{{ product.id }}"
+          data-action="add"
+          class="btn btn-outline-secondary add-btn update-cart"
+        >
+          Add to Cart
+        </button>
+        {% else %}
+        <a href="{% url 'login' %}">
+          <button
+            data-product="{{ product.id }}"
+            data-action=""
+            class="btn btn-outline-secondary add-btn update-cart"
+          >
+            Add to Cart
+          </button>
+        </a>
+        {% endif %}
+          <h4 style="display: inline-block; float: right">
+            <strong>${{product.price|floatformat:2}}</strong>
+
+            <p>{{product.detail | safe}}</p>
+          </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock content %}
+</div>
