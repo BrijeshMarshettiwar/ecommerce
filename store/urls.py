@@ -13,6 +13,7 @@ urlpatterns = [
     path('logout/',views.LogoutPage, name='logout'),
     path('About',views.AboutusPage,name='About'),
     path('Services',views.ServicesPage, name='Services'),
-    path('Contact',views.ContactPage, name='Contact')
+    path('Contact',views.ContactPage, name='Contact'),
+    path('search/',views.search, name='search'),
 
 ]
