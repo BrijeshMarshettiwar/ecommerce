@@ -189,6 +189,18 @@ def ContactPage(request):
 	context = {'items':items, 'order':order, 'cartItems':cartItems,}
 	return render(request, 'store/Contact.html', context) 
 
+def search(request):
+	data = cartData(request)
+	cartItems = data['cartItems']
+	order = data['order']
+	items = data['items']
+	if request.method == "POST":
+		searched1 = request.POST['search_data']
 
+		searched = Product.objects.filter(name__icontains=searched1)
+		context = {'items':items, 'order':order, 'cartItems':cartItems,'searched':searched}
+		return render(request,"store/search.html",context)
+	else:
+		return render(request,"store/search.html",{})
 
 
