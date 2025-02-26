@@ -10,7 +10,7 @@
     margin-bottom: 20px;
   }
 
-  form {
+  .form1 {
     background: white;
     padding: 20px;
     border-radius: 8px;
@@ -29,7 +29,7 @@
     margin-top: 10px;
   }
 
-  input {
+  .input1 {
     width: 100%;
     padding: 10px;
     margin: 5px 0;
@@ -37,7 +37,7 @@
     border-radius: 5px;
   }
 
-  button {
+  .button1 {
     width: 100%;
     padding: 10px;
     background: #28a745;
@@ -65,18 +65,31 @@
   }
 </style>
 <div class="container box">
-  <form action="" method="post">
+  <form class="form1" action="" method="post">
     {% csrf_token %}
     <h3>Signup Here</h3>
 
     <label for="username">Username</label>
-    <input type="text" placeholder="Username" name="username" id="username" />
+    <input
+      class="input1"
+      type="text"
+      placeholder="Username"
+      name="username"
+      id="username"
+    />
 
     <label for="email">Email</label>
-    <input type="email" placeholder="Email or Phone" name="email" id="email" />
+    <input
+      class="input1"
+      type="email"
+      placeholder="Email or Phone"
+      name="email"
+      id="email"
+    />
 
     <label for="password1">Password</label>
     <input
+      class="input1"
       type="password"
       placeholder="Password"
       id="password1"
@@ -85,12 +98,13 @@
 
     <label for="confirm_password">Confrom Password</label>
     <input
+      class="input1"
       type="password"
       placeholder="Confrom Password"
       id="confirm_password"
       name="confirm_password"
     />
-    <button type="submit">Signup</button>
+    <button class="button1" type="submit">Signup</button>
 
     <a href="{% url 'login' %}">i have already account</a>
   </form>
