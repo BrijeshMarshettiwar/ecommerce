@@ -10,7 +10,7 @@
     margin-bottom:20px;
 }
 
-form {
+.form1 {
     background: white;
     padding: 20px;
     border-radius: 8px;
@@ -30,7 +30,7 @@ label {
     margin-top: 10px;
 }
 
-input {
+.input1 {
     width: 100%;
     padding: 10px;
     margin: 5px 0;
@@ -38,7 +38,7 @@ input {
     border-radius: 5px;
 }
 
-button {
+.button1 {
     width: 100%;
     padding: 10px;
     background: #007bff;
@@ -65,16 +65,18 @@ a:hover {
     text-decoration: underline;
 }
 </style>
-<div class="container box"><form method="post">
+<div class="container box">
+    
+ <form class="form1" method="post">
   <h3>Login Here</h3>
   {% csrf_token %} 
   <label for="username">Username</label>
-  <input type="text" placeholder="Enter Username" id="username" name="username">
+  <input class="input1" type="text" placeholder="Enter Username" id="username" name="username">
 
   <label for="password">Password</label>
-  <input type="password" placeholder="Password" id="password" name="password">
+  <input class="input1" type="password" placeholder="Password" id="password" name="password">
 
-  <button type="submit">Log In</button>
+  <button class="button1" type="submit">Log In</button>
   <!-- <input type="button" value=""> -->
   <!-- <div class="social">
     <div class="go"><i class="fab fa-google"></i>  Google</div>
