@@ -1,0 +1,57 @@
+{% extends "store/main.html" %} {% load static %} {% block content %}
+
+<div class="container box">
+  <div class="row" style="margin: 10px">
+    <script>
+      $(".one").not(".slick-intialized").slick({
+        autoplay: true,
+        autoplaySpeed: 3000,
+        dots: true,
+        prevArrow: ".pre",
+        nextArrow: ".next",
+      });
+    </script>
+    {% for product in searched %}
+    <div class="col-lg-4">
+      <img
+        class="thumbnail"
+        src="{{ product.imageURL }}"
+        alt=""
+        style="width: 333px; height: 350px"
+      />
+      <div class="box-element product">
+        <h6><strong>{{product.name}}</strong></h6>
+        <hr />
+        {% if user.is_authenticated %}
+        <button
+          data-product="{{ product.id }}"
+          data-action="add"
+          class="btn btn-outline-secondary add-btn update-cart"
+        >
+          Add to Cart
+        </button>
+        {% else %}
+        <a href="{% url 'login' %}">
+          <button
+            data-product="{{ product.id }}"
+            data-action=""
+            class="btn btn-outline-secondary add-btn update-cart"
+          >
+            Add to Cart
+          </button>
+        </a>
+        {% endif %}
+        <a
+          href="{% url 'productDetail' product.id %}"
+          class="btn btn-outline-success"
+          >View</a
+        >
+        <h4 style="display: inline-block; float: right">
+          <strong>${{product.price|floatformat:2}}</strong>
+        </h4>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}
